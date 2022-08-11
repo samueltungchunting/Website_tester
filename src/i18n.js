@@ -14,7 +14,7 @@ i18n
         },
         debug: false, // disabled in production 
         fallbackLng: "en",
-        ns: ["common", "home", "page1", "page2"],
+        ns: ["navbar", "common", "home", "page1", "page2"],
         interpolation: {
             escapeValue: false,
             formatSeparator: ","

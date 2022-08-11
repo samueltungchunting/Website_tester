@@ -11,6 +11,8 @@ import Home from './pages/Home';
 import Page1 from './pages/Page1';
 import Page2 from './pages/Page2';
 import './i18n';
+import Navbar from './global/navbar/Navbar';
+// import TabPage from './pages/TabPage';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -19,12 +21,14 @@ root.render(
     <Suspense fallback={null}>
       <BrowserRouter>
       {/* <Suspense fallback={null}> */}
+        <Navbar />
         <Routes>
           <Route path='/' element={<Page2 />} />
           <Route path='/page1' element={<Page1 />}/>
           <Route path='/page2' element={<Page2 />}/>
           <Route path='/home' element={<Home />} />
           <Route path='/gallery1' element={<GalleryTest />} />
+          {/* <Route path='/tabpage' element={<TabPage />} /> */}
         </Routes>
         {/* </Suspense> */}
       </BrowserRouter>
