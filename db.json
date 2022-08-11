@@ -1,0 +1,14 @@
+{
+  "posts": [
+    {
+      "id": "1",
+      "comment": "Gigi da best",
+      "likes": "299"
+    },
+    {
+      "id": "2",
+      "comment": "Samuel so smart",
+      "likes": "123"
+    }
+  ]
+}

@@ -1,0 +1,7 @@
+{
+    "fetch": "Fetch",
+    "add": "Add",
+    "pull": "Pull",
+    "delete": "Delete",
+    "title": "This is the id of the first fetched data"
+}
