@@ -4,6 +4,9 @@ import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next';
 import i18n from '../i18n';
 import { v4 } from 'uuid'
+import CircularProgress from '@mui/material/CircularProgress';
+import Backdrop from '@mui/material/Backdrop';
+
 
 const Page2 = () => {
 
@@ -59,14 +62,18 @@ const Page2 = () => {
         i18n.changeLanguage(lang)
     }
 
+    const [delectProgress, SetDelectProgress] = useState(false)
+
     function deleteTheComment(id) {
+        SetDelectProgress(true)
         axios.delete(`https://62e8845f93938a545be709bf.mockapi.io/comment/${id}`)
             .then((res) => {
                 setComment(comment.filter(item => item.id !== id));
                 console.log("deleted", id);
-            })
-            .catch(err => {
+            }).catch(err => {
                 window.location.reload()
+            }).finally(() => {
+                SetDelectProgress(null)
             })
     }
    
@@ -94,17 +101,26 @@ const Page2 = () => {
             <button onClick={() => clickChangeLanguage('en')}>English</button>
             <button onClick={() => clickChangeLanguage('cn')}>中文</button>
 
-
             <div className="comments_section">
                 <h2>{t("comments")}</h2>
-                {comment?.map(item => {
-                    return (
-                        <div key={item.id}>
-                            {item.comment}
-                            <button onClick={() => {deleteTheComment(item.id)}}>{t("delete")}</button>
-                        </div>
-                    )
-                })}
+                {comment && !delectProgress ? 
+                    comment?.map(item => {
+                        return (
+                            <div key={item.id}>
+                                {item.comment}
+                                <button onClick={() => {deleteTheComment(item.id)}}>{t("delete")}</button>
+                            </div>
+                        )
+                    }): <Backdrop
+                            sx={{ color: '#007FFF', zIndex: (theme) => theme.zIndex.drawer + 1 }}
+                            open
+                        >
+                            <CircularProgress 
+                                color="inherit"
+                                size={100}
+                            />
+                        </Backdrop>
+                }
             </div>
         </div>
   

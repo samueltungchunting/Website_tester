@@ -12,8 +12,8 @@ import Page1 from './pages/Page1';
 import Page2 from './pages/Page2';
 import './i18n';
 import Navbar from './global/navbar/Navbar';
+import Loader from './global/loader/Loader';
 // import TabPage from './pages/TabPage';
-
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -21,6 +21,7 @@ root.render(
     <Suspense fallback={null}>
       <BrowserRouter>
       {/* <Suspense fallback={null}> */}
+      <Loader />
         <Navbar />
         <Routes>
           <Route path='/' element={<Page2 />} />
