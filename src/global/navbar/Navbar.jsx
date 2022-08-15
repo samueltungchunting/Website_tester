@@ -58,10 +58,16 @@ export default function Navbar({color}) {
                         <Link to="/page1">Page1</Link>
                     </li>
                     <li>
-                        <Link to="/page2">Page2</Link>
+                        <Link to="/page2">Comment</Link>
                     </li>
                     <li>
                         <Link to="/tab">Tab-test</Link>
+                    </li>
+                    <li>
+                        <Link to="/page3">3-Hooks</Link>
+                    </li>
+                    <li>
+                        <Link to="/page4">UseInView</Link>
                     </li>
                 </ul>
             </div>

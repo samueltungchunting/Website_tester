@@ -13,6 +13,8 @@ import Page2 from './pages/Page2';
 import './i18n';
 import Navbar from './global/navbar/Navbar';
 import Loader from './global/loader/Loader';
+import UseEffectUseRefUseState from './pages/UseEffectUseRefUseState';
+import UseInView from './pages/UseInView';
 // import TabPage from './pages/TabPage';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -30,6 +32,9 @@ root.render(
           <Route path='/home' element={<Home />} />
           <Route path='/gallery1' element={<GalleryTest />} />
           {/* <Route path='/tabpage' element={<TabPage />} /> */}
+          <Route path='/page3' element={<UseEffectUseRefUseState />} />
+          <Route path='/page4' element={<UseInView />} />
+          {/* <Route path='/page5' element={< />} /> */}
         </Routes>
         {/* </Suspense> */}
       </BrowserRouter>
