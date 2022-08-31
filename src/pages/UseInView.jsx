@@ -20,10 +20,9 @@ const UseInView = () => {
 
     // Just styles
     const sectionStyle = {
-        height: "60vh",
-        display: "flex",
-        justifyContent: "center",
-        alignItems: "center"
+        height: "40vh",
+        position: "relative",
+        textAlign: "center"
     }
 
     const sectionStyle1 = {
@@ -38,19 +37,46 @@ const UseInView = () => {
 
     const sectionStyle3 = {
         ...sectionStyle,
-        backgroundColor: "#C48574"
+        backgroundColor: "#C48574",
     }
+
+    const sectionStyle4 = {
+        ...sectionStyle,
+        backgroundColor: "#3204",
+    }
+
 
     return (
         <div>
             <div className="section1" style={sectionStyle1}  ref={line2Ref}>
-                Section 1
+                <div style={{}}>
+                    <h4>Section 3 News</h4>
+                    <p style={{maxWidth: "400px"}}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium laborum maiores eaque, vitae in dignissimos recusandae quam asperiores soluta illum.</p>
+                </div>
             </div>
+
             <div className="section2" style={sectionStyle2}>
-                <p style={{fontSize: line2IsVisible? "16px": "40px"}}>{isVisible? "*---------------------*": "Section 2"}</p>
+                <div className="box2" style={{position: "absolute"}}>
+                    Box 2
+                </div>
+                <div style={{}}>
+                    <h4>Section 3 News</h4>
+                    <p style={{maxWidth: "400px"}}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium laborum maiores eaque, vitae in dignissimos recusandae quam asperiores soluta illum.</p>
+                </div>
             </div>
+            
             <div className="section3" style={sectionStyle3} ref={line1Ref}>
-                Section 3
+                <div style={{}}>
+                    <h4>Section 3 News</h4>
+                    <p style={{maxWidth: "400px"}}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium laborum maiores eaque, vitae in dignissimos recusandae quam asperiores soluta illum.</p>
+                </div>
+            </div>
+
+            <div className="section4" style={sectionStyle4} ref={line1Ref}>
+                <div style={{}}>
+                    <h4>Section 3 News</h4>
+                    <p style={{maxWidth: "400px"}}>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium laborum maiores eaque, vitae in dignissimos recusandae quam asperiores soluta illum.</p>
+                </div>
             </div>
         </div>
     )

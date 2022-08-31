@@ -24,7 +24,7 @@ root.render(
       <BrowserRouter>
       {/* <Suspense fallback={null}> */}
       <Loader />
-        <Navbar />
+        {/* <Navbar /> */}
         <Routes>
           <Route path='/' element={<Page2 />} />
           <Route path='/page1' element={<Page1 />}/>
